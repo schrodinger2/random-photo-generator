@@ -38,10 +38,15 @@ hei.addEventListener("input", () => {
 
 
 button.addEventListener("click", async () => {
+  let blur = document.querySelector("#blur").value;
+  let url = `https://picsum.photos/${list[0]}/${list[1]}`;
+      // adding grayscale to the url
   if (document.querySelector("#gray").checked) {
-    img.src = `https://picsum.photos/${list[0]}/${list[1]}?grayscale`;
-
-  }else {
-    img.src = `https://picsum.photos/${list[0]}/${list[1]}`;
-  }
+    url += `?grayscale`;
+    // adding blur to the url after the grayscale
+    if (blur != 0) {url += `&blur=${blur}`};
+  };
+  // adding blur to the url
+  if (blur != 0) {url += `?blur=${blur}`};
+  img.src = url;
 });
