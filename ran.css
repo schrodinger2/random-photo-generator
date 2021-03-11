@@ -10,6 +10,12 @@ body{
   justify-content: center;
   align-items: center;
 }
+.page {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
 .size {
   margin-top: 25pt;
 }
@@ -25,8 +31,9 @@ body{
   align-items: center;
 }
 .container{
+  height: 300pt;
   margin-top: 70pt;
   display: flex;
-  justify-content: center;
   align-items: center;
+  z-index: -1;
 }
