@@ -20,7 +20,14 @@ body{
   width: 600pt;
   height: 300pt;
   background-color: #ddd;
-  margin-top: 50pt;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.container{
+  width: 600pt;
+  height: 300pt;
+  margin-top: 90pt;
   display: flex;
   justify-content: center;
   align-items: center;
