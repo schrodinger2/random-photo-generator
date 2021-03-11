@@ -38,5 +38,10 @@ hei.addEventListener("input", () => {
 
 
 button.addEventListener("click", async () => {
-  img.src = `https://picsum.photos/${list[0]}/${list[1]}`;
+  if (document.querySelector("#gray").checked) {
+    img.src = `https://picsum.photos/${list[0]}/${list[1]}?grayscale`;
+
+  }else {
+    img.src = `https://picsum.photos/${list[0]}/${list[1]}`;
+  }
 });
