@@ -1,31 +1,40 @@
-*{
+* {
   padding: 0;
   margin: 0;
   font-family: sans-serif;
   font-weight: bold;
+  color: #fff;
 }
-body{
+
+:root {
+  --controler-dimensions: 0.7vmax;
+  --controler-out-dimensions: -0.7vmax;
+}
+
+body {
+  background-color: #1a1a1a;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
 }
-:root{
-  --controler-dimensions: 0.7vmax;
-  --controler-out-dimensions: -0.7vmax;
-}
+
+
 .page {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
 }
+
 .size {
   margin-top: 25pt;
 }
-.size span,.size button{
+
+.size span, .size button {
   margin-right: 7pt;
 }
+
 .rect {
   position: relative;
   width: 600pt;
@@ -35,46 +44,51 @@ body{
   justify-content: center;
   align-items: center;
 }
+
 .control {
   width: var(--controler-dimensions);
   height: var(--controler-dimensions);
-  background-color: #000;
+  background-color: #fff;
+  z-index: inherit;
   /* border: 2pt solid #000; */
 }
-.control:hover{
+
+.container .rect .control:hover {
   /* border: 2pt solid #d43; */
   background-color: #e62;
 }
+
 #topleft {
   position: absolute;
   top: var(--controler-out-dimensions);
   left: var(--controler-out-dimensions);
 }
+
 #topright {
   position: absolute;
   top: var(--controler-out-dimensions);
   right: var(--controler-out-dimensions);
 }
+
 #bottomleft {
   position: absolute;
   bottom: var(--controler-out-dimensions);
   left: var(--controler-out-dimensions);
 }
+
 #bottomright {
   position: absolute;
   bottom: var(--controler-out-dimensions);
   right: var(--controler-out-dimensions);
 }
-.container{
+
+.container {
   height: 300pt;
   margin-top: 70pt;
   display: flex;
   align-items: center;
-  z-index: -1;
 }
-#canvas {
-  background: #000;
-}
-#canvas:hover {
-  background: #d62;
+
+#button {
+  color: #000;
 }

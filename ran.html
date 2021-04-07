@@ -1,34 +1,39 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
-  <head>
-    <meta charset="utf-8">
-    <title>Random photo</title>
-    <link rel="stylesheet" href="./ran.css">
-  </head>
-  <body>
-    <div class="page">
-      <div class="size">
-        <span >Height:  <input id="height" type="number" name="" value="" placeholder="400"></span>
-        <span >Width:  <input id="width" type="number" name="" value="" placeholder="800"></span>
-        <button id="button" type="button" name="button">Randomize</button>
-      </div>
-      <div class="size">
-        <span>Grayscale  <input id="gray" type="checkbox" name="Grayscale" value=""></span>
-        <span>Blur  <input id="blur" type="range" min="0" max="10" name="blur" value="0"></span>
-      </div>
-      <div class="container">
-        <div class="rect">
 
-          <!-- controlers -->
-          <canvas class="control" id="topleft"></canvas>
-          <canvas class="control" id="topright"></canvas>
-          <canvas class="control" id="bottomleft"></canvas>
-          <canvas class="control" id="bottomright"></canvas>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Random photo</title>
+  <link rel="stylesheet" href="./ran.css">
+</head>
 
-          <img class="img">
-        </div>
+<body>
+  <div class="page">
+    <div class="size">
+      <span>Height: <input id="height" type="number" name="" value="" placeholder="400"></span>
+      <span>Width: <input id="width" type="number" name="" value="" placeholder="800"></span>
+      <button id="button" type="button">Randomize</button>
+    </div>
+    <div class="size">
+      <span>Grayscale <input id="gray" type="checkbox" name="Grayscale" value=""></span>
+      <span>Blur <input id="blur" type="range" min="0" max="10" name="blur" value="0"></span>
+    </div>
+    <div class="container">
+      <div class="rect">
+
+        <!-- controlers -->
+        <canvas class="control" id="topleft"></canvas>
+        <canvas class="control" id="topright"></canvas>
+        <canvas class="control" id="bottomleft"></canvas>
+        <canvas class="control" id="bottomright"></canvas>
+
+        <img class="img">
       </div>
     </div>
-    <script type="text/javascript" src="ran.js"></script>
-  </body>
+  </div>
+  <script type="text/javascript" src="ran.js"></script>
+</body>
+
 </html>
