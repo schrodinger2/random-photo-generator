@@ -1,21 +1,21 @@
 let wid = document.querySelector("#width")
 let hei = document.querySelector("#height")
+let dimension;
 let width = 800;
 let height = 400;
-let dimension;
 
 input(wid, width, "width")
 
 // doing the same for height input
 input(hei, height, "height")
 
-const button = document.querySelector('#button');
+const button = document.querySelector('button');
 button.addEventListener("click", async () => {
-  let blur = document.querySelector("#blur").value;
   width = Math.floor(width);
   height = Math.floor(height);
   let url = `https://picsum.photos/${width}/${height}`;
   // adding grayscale to the url
+  let blur = document.querySelector("#blur").value;
   if (document.querySelector("#gray").checked) {
     url += `?grayscale`;
     // adding blur to the url after the grayscale
@@ -56,7 +56,7 @@ document.addEventListener("mouseup", e => {
   for (var i = 0; i < dirList.length; i++) {
     if (dirList[i]) {
       endCoordinates(e, i)
-      dirList[i] = false
+      dirList[i] = false;
     }
   }
 })
@@ -84,20 +84,26 @@ function endCoordinates(e, i) { //the i will be used to determine witch controle
   };
 
   // extracting the width and height from input's value or its placeholder
-  if (wid.value != "") {
-    width = parseFloat(wid.value) + diffx;
-    wid.value = Math.floor(parseFloat(wid.value) + diffx * 3 / 4);
+  if (wid.value) {
+    if (parseFloat(wid.value) > diffx * -2) {
+      wid.value = parseFloat(wid.value) + (diffx * 2);
+    } else {
+      wid.value = parseFloat(wid.value) + diffx;
+    }
   } else {
-    width = parseFloat(wid.placeholder) + diffx;
-    wid.value = Math.floor(parseFloat(wid.placeholder) + diffx * 3 / 4);
+    wid.value = 800 + diffx;
   }
-  if (hei.value != "") {
-    height = parseFloat(hei.value) + diffy;
-    hei.value = Math.floor(parseFloat(hei.value) + diffy * 3 / 4);
+  if (hei.value) {
+    if (parseFloat(hei.value) > diffy * -2) {
+      hei.value = parseFloat(hei.value) + (diffy * 2);
+    } else {
+      hei.value = parseFloat(hei.value) + diffy;
+    }
   } else {
-    height = parseFloat(hei.placeholder) + diffy;
-    hei.value = Math.floor(parseFloat(hei.placeholder) + diffy * 3 / 4);
+    hei.value = 400 + diffy;
   }
+  width = wid.value;
+  height = hei.value;
 
   let bugfixerwid = Math.floor(width * 3 / 4);
   let bugfixerhei = Math.floor(height * 3 / 4);
@@ -112,10 +118,8 @@ function input(i, j, string) {
       j = i.value;
       dimension = j * 3 / 4; // fixing a weird bug
     } else {
-      j = i.placeholder;
       dimension = j
     }
-    console.log(j);
     // styling the width and height of the rectangle
     dimension = dimension.toString();
     document.querySelector('.rect').style[string] = `${dimension}pt`; //adjusting the dimensions

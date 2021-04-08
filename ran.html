@@ -10,28 +10,25 @@
 </head>
 
 <body>
-  <div class="page">
-    <div class="size">
-      <span>Height: <input id="height" type="number" name="" value="" placeholder="400"></span>
-      <span>Width: <input id="width" type="number" name="" value="" placeholder="800"></span>
-      <button id="button" type="button">Randomize</button>
-    </div>
-    <div class="size">
-      <span>Grayscale <input id="gray" type="checkbox" name="Grayscale" value=""></span>
-      <span>Blur <input id="blur" type="range" min="0" max="10" name="blur" value="0"></span>
-    </div>
-    <div class="container">
-      <div class="rect">
+  <div class="container">
+    <div class="rect">
 
-        <!-- controlers -->
-        <canvas class="control" id="topleft"></canvas>
-        <canvas class="control" id="topright"></canvas>
-        <canvas class="control" id="bottomleft"></canvas>
-        <canvas class="control" id="bottomright"></canvas>
+      <!-- controlers -->
+      <canvas class="control" id="topleft"></canvas>
+      <canvas class="control" id="topright"></canvas>
+      <canvas class="control" id="bottomleft"></canvas>
+      <canvas class="control" id="bottomright"></canvas>
 
-        <img class="img">
-      </div>
+      <img class="img">
     </div>
+  </div>
+  <div class="card">
+    <input id="height" type="number" class="input" value="" placeholder="Height">
+    <input id="width" type="number" class="input" value="" placeholder="Width">
+    <input id="gray" type="checkbox" value="">
+    <label for="gray"><div class="button">Grayscale</div></label>
+    <input id="blur" type="range" min="0" max="10" placeholder="Blur" name="blur" value="0">
+    <button class="button" type="button">Randomize</button>
   </div>
   <script type="text/javascript" src="ran.js"></script>
 </body>
