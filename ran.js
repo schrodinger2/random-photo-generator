@@ -9,7 +9,7 @@ input(wid, width, "width")
 // doing the same for height input
 input(hei, height, "height")
 
-const button = document.querySelector('button');
+const button = document.querySelector('.randomize');
 button.addEventListener("click", async () => {
   width = Math.floor(width);
   height = Math.floor(height);
@@ -87,7 +87,7 @@ function endCoordinates(e, i) { //the i will be used to determine witch controle
   if (wid.value) {
     if (parseFloat(wid.value) > diffx * -2) {
       wid.value = parseFloat(wid.value) + (diffx * 2);
-    } else {
+    } else if (parseFloat(wid.value) > diffx * -1) {
       wid.value = parseFloat(wid.value) + diffx;
     }
   } else {
@@ -96,7 +96,7 @@ function endCoordinates(e, i) { //the i will be used to determine witch controle
   if (hei.value) {
     if (parseFloat(hei.value) > diffy * -2) {
       hei.value = parseFloat(hei.value) + (diffy * 2);
-    } else {
+    } else if (parseFloat(hei.value) > diffy * -1) {
       hei.value = parseFloat(hei.value) + diffy;
     }
   } else {
