@@ -25,9 +25,11 @@
   <div class="card">
     <input id="height" type="number" class="input" value="" placeholder="Height">
     <input id="width" type="number" class="input" value="" placeholder="Width">
-    <input id="blur" type="range" min="0" max="10" value="0">
-    <input id="gray" type="checkbox" value="">
-    <label for="gray"><button class="grayscale">Grayscale</button></label>
+    <span>Blur: <input id="blur" type="range" min="0" max="10" value="0"></span>
+    <input id="gray" name="gray" type="checkbox">
+    <label for="gray">
+      <div id="grayscale">Grayscale</div>
+    </label>
     <button class="randomize" type="button">Randomize</button>
   </div>
   <script type="text/javascript" src="ran.js"></script>

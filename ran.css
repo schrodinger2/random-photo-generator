@@ -25,7 +25,6 @@ body {
   right: 1vw;
   bottom: 1vw;
   background-color: #fff;
-  opacity: 0.7;
   height: 25vh;
   width: 20vw;
   display: flex;
@@ -34,10 +33,10 @@ body {
   justify-content: space-around;
 }
 
-#blur {
-  transform: rotate(270deg);
-  position: fixed;
-  right: -5vw;
+#blur {}
+
+.hide {
+  display: none;
 }
 
 .size {
@@ -52,7 +51,7 @@ body {
   position: relative;
   width: 600pt;
   height: 300pt;
-  background-color: #ddd;
+  background-color: #fff;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -102,12 +101,7 @@ body {
   align-items: center;
 }
 
-#gray {
-  opacity: 0;
-  position: fixed;
-}
-
-button, input {
+button, input, #grayscale {
   text-align: center;
   width: 15vw;
   height: 2vh;
@@ -122,36 +116,68 @@ button, input {
 }
 
 input[type=range] {
+  width: 12vw;
   -webkit-appearance: none;
 }
 
 input[type=range]::-webkit-slider-runnable-track {
-  /* transform: rotate(270deg); */
-  height: .35em;
+  height: 2px;
   background: #1a1a1a;
   border: none;
   border-radius: 3px;
+  margin-bottom: -7px;
 }
 
 input[type=range]::-webkit-slider-thumb {
   -webkit-appearance: none;
-  /* border: none; */
-  height: 1.1em;
-  width: 1.1em;
+  height: 15px;
+  width: 15px;
   cursor: pointer;
   border-radius: 50%;
   background: #1a1a1a;
-  margin-top: -4px;
+  margin-top: -6px;
 }
 
 input[type=range]:focus {
   outline: none;
 }
 
-.grayscale {
+input[type=range]:hover {
+  content: "blur";
+}
+
+#gray {
+  opacity: 0;
+  position: fixed;
+  z-index: -9;
+}
+
+label {
+  z-index: 55;
+}
+
+#grayscale {
+  font-size: 0.9em;
   background: linear-gradient(90deg, rgb(198, 252, 5) 0%, rgb(7, 196, 79) 50%, rgb(0, 212, 255) 100%);
 }
 
-#gray:checked+label .grayscale {
+#grayscale:hover {
+  background: linear-gradient(90deg, rgb(168, 222, 0) 0%, rgb(0, 166, 49) 50%, rgb(0, 182, 225) 100%);
+}
+
+#gray:checked+label #grayscale {
   background: linear-gradient(90deg, rgb(198, 198, 198) 0%, rgb(79, 79, 79) 50%, rgb(212, 212, 212) 100%);
+}
+
+#gray:checked+label #grayscale:hover {
+  background: linear-gradient(90deg, rgb(168, 168, 168) 0%, rgb(49, 49, 49) 50%, rgb(182, 182, 182) 100%);
+}
+
+.randomize {
+  background-color: #1a1a1a;
+  color: white;
+}
+
+.randomize:hover {
+  background-color: #3c3c3c;
 }
