@@ -12,42 +12,16 @@
 }
 
 body {
+  height: 100vh;
+  width: 100vw;
   background-color: #1a1a1a;
   display: flex;
-  /* flex-direction: column; */
   justify-content: center;
   align-items: center;
 }
 
-.card {
-  margin-left: 2vw;
-  position: fixed;
-  right: 1vw;
-  bottom: 1vw;
-  background-color: #fff;
-  height: 25vh;
-  width: 20vw;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: space-around;
-}
-
-#blur {}
-
-.hide {
-  display: none;
-}
-
-.size {
-  margin-top: 25pt;
-}
-
-.size span, .size button {
-  margin-right: 7pt;
-}
-
 .rect {
+  margin-top: -10vh;
   position: relative;
   width: 600pt;
   height: 300pt;
@@ -57,16 +31,15 @@ body {
   align-items: center;
 }
 
+/* controlers */
 .control {
   width: var(--controler-dimensions);
   height: var(--controler-dimensions);
   background-color: #fff;
   z-index: inherit;
-  /* border: 2pt solid #000; */
 }
 
-.container .rect .control:hover {
-  /* border: 2pt solid #d43; */
+.rect .control:hover {
   background-color: #e62;
 }
 
@@ -94,11 +67,18 @@ body {
   right: var(--controler-out-dimensions);
 }
 
-.container {
-  height: 300pt;
-  margin-top: 70pt;
+/* card */
+.card {
+  position: fixed;
+  right: 1vw;
+  bottom: 1vw;
+  background-color: #fff;
+  height: 25vh;
+  width: 20vw;
   display: flex;
+  flex-direction: column;
   align-items: center;
+  justify-content: space-around;
 }
 
 button, input, #grayscale {
