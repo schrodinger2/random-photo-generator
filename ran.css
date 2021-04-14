@@ -3,7 +3,6 @@
   margin: 0;
   font-family: sans-serif;
   font-weight: bold;
-  color: #000;
 }
 
 :root {
@@ -36,11 +35,13 @@ body {
   width: var(--controler-dimensions);
   height: var(--controler-dimensions);
   background-color: #fff;
+  cursor: pointer;
+
   z-index: inherit;
 }
 
 .rect .control:hover {
-  background-color: #e62;
+  background-color: rgb(0, 162, 205);
 }
 
 #topleft {
@@ -75,12 +76,74 @@ body {
   background-color: #fff;
   height: 25vh;
   width: 20vw;
+  /* overflow: hidden; */
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: space-around;
 }
 
+
+/* minicard */
+.minicard {
+  animation: opacity 2s reverse;
+  opacity: 0.5;
+  position: fixed;
+  right: 1vw;
+  bottom: 1vw;
+  background-color: #fff;
+  width: 20vw;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.minicard:hover {
+  animation: opacity 2s ease;
+  opacity: 1;
+}
+
+.style {
+  font-size: 1.5vw;
+  color: rgb(0, 162, 205);
+}
+
+#down:hover .style {
+  animation: rotate 1.5s ease;
+}
+
+.hide {
+  display: none;
+}
+/* svg */
+.up-down {
+  background-color: #fff;
+  margin-top: -1vh;
+  height: 3.5vh;
+  width: inherit;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-bottom: 1px solid #1a1a1a;
+}
+
+.up-down:hover {
+  border-bottom-color: rgb(0, 162, 205);
+}
+
+.svg {
+  height: 3vh;
+  fill: rgb(0, 162, 205);
+}
+
+#up:hover .svg {
+  animation: rotate 1.5s ease;
+}
+
+/* btns and inputs */
 button, input, #grayscale {
   text-align: center;
   width: 15vw;
@@ -93,6 +156,14 @@ button, input, #grayscale {
 
 .input {
   border-bottom: 1pt solid #1a1a1a;
+}
+
+.input:hover {
+  border-bottom-color: rgb(0, 162, 205);
+}
+
+.input:focus {
+  border-bottom-color: rgb(0, 162, 205);
 }
 
 input[type=range] {
@@ -118,6 +189,10 @@ input[type=range]::-webkit-slider-thumb {
   margin-top: -6px;
 }
 
+input[type=range]::-webkit-slider-thumb:hover {
+  background: rgb(0, 162, 205);
+}
+
 input[type=range]:focus {
   outline: none;
 }
@@ -126,7 +201,7 @@ input[type=range]:hover {
   content: "blur";
 }
 
-#gray {
+input[type=checkbox] {
   opacity: 0;
   position: fixed;
   z-index: -9;
@@ -160,4 +235,32 @@ label {
 
 .randomize:hover {
   background-color: #3c3c3c;
+}
+
+/* key frames */
+@keyframes rotate {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  30% {
+    transform: rotate(360deg);
+  }
+
+  65% {
+    transform: rotate(450deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes opacity {
+  0% {
+    opacity: 0.5;
+  }
+  100%{
+    opacity: 1;
+  }
 }
