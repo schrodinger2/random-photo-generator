@@ -1,0 +1,42 @@
+@media (max-width: 1100px) {
+  :root {
+    --card-width: 25vw;
+    --btn-width: 20vw;
+    --blur-width: 16vw;
+  }
+}
+@media (max-width: 1000px) {
+  :root {
+    --card-width: 30vw;
+    --btn-width: 25vw;
+    --blur-width: 20vw;
+  }
+}
+@media (max-width: 800px) {
+  :root {
+    --card-width: 80vw;
+    --btn-width: 65vw;
+    --blur-width: 58vw;
+  }
+
+  .card {
+    right: 10vw;
+  }
+}
+@media (max-height: 800px) {
+  .card {
+    height: 35vh;
+  }
+
+  #grayscale,
+button,
+input {
+    height: 3.2vh;
+  }
+
+  .up-down {
+    height: 4.5vh;
+  }
+}
+
+/*# sourceMappingURL=media.css.map */

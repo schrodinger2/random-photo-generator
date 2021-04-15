@@ -1,0 +1,257 @@
+* {
+  padding: 0;
+  margin: 0;
+  font-family: sans-serif;
+  font-weight: bold;
+}
+
+:root {
+  --controler-dimensions: 0.7vmax;
+  --controler-out-dimensions: -0.7vmax;
+  --white: #fff;
+  --theme: #1a1a1a;
+  --card-width: 23vw;
+  --btn-width: 18vw;
+  --blur-width: 15vw;
+}
+
+body {
+  height: 100vh;
+  width: 100vw;
+  background-color: var(--theme);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.rect {
+  margin-top: -10vh;
+  position: relative;
+  width: 600pt;
+  height: 300pt;
+  background-color: var(--white);
+  -webkit-box-shadow: 3px 6px 28px -2px rgba(0, 0, 0, 0.45);
+  -moz-box-shadow: 3px 6px 28px -2px rgba(0, 0, 0, 0.45);
+  box-shadow: 3px 6px 28px -2px rgba(0, 0, 0, 0.45);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* controlers */
+.control {
+  width: var(--controler-dimensions);
+  height: var(--controler-dimensions);
+  background-color: var(--white);
+  cursor: pointer;
+  z-index: inherit;
+}
+
+.rect .control:hover {
+  background-color: #00a2cd;
+}
+
+#topleft {
+  position: absolute;
+  top: var(--controler-out-dimensions);
+  left: var(--controler-out-dimensions);
+}
+
+#topright {
+  position: absolute;
+  top: var(--controler-out-dimensions);
+  right: var(--controler-out-dimensions);
+}
+
+#bottomleft {
+  position: absolute;
+  bottom: var(--controler-out-dimensions);
+  left: var(--controler-out-dimensions);
+}
+
+#bottomright {
+  position: absolute;
+  bottom: var(--controler-out-dimensions);
+  right: var(--controler-out-dimensions);
+}
+
+/* card */
+.minicard, .card {
+  position: fixed;
+  right: 1vw;
+  bottom: 1vw;
+  background-color: var(--white);
+  width: var(--card-width);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  -webkit-box-shadow: 3px 6px 28px -2px rgba(0, 0, 0, 0.45);
+  -moz-box-shadow: 3px 6px 28px -2px rgba(0, 0, 0, 0.45);
+  box-shadow: 3px 6px 28px -2px rgba(0, 0, 0, 0.45);
+}
+
+.card {
+  height: 25vh;
+}
+
+/* minicard */
+.minicard {
+  animation: opacity 2s reverse;
+  opacity: 0.5;
+  height: auto;
+}
+.minicard:hover {
+  animation: opacity 2s ease;
+  opacity: 1;
+}
+
+.style {
+  font-size: 1.5vw;
+  color: #00a2cd;
+}
+#down:hover .style {
+  animation: rotate 1.5s ease;
+}
+
+.hide {
+  display: none;
+}
+
+/* svg */
+.up-down {
+  background-color: var(--white);
+  margin-top: -1vh;
+  height: 3.5vh;
+  width: inherit;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-bottom: 1px solid var(--theme);
+}
+.up-down:hover {
+  border-bottom-color: #00a2cd;
+}
+
+.svg {
+  height: 3vh;
+  fill: #00a2cd;
+}
+
+#up:hover .svg {
+  animation: rotate 1.5s ease;
+}
+
+/* btns and inputs */
+#grayscale,
+button,
+input {
+  text-align: center;
+  width: var(--btn-width);
+  height: 2.5vh;
+  color: #000;
+  border: none;
+  background-color: none;
+  outline: none;
+}
+
+.input {
+  border-bottom: 1pt solid var(--theme);
+}
+.input:hover {
+  border-bottom-color: #00a2cd;
+}
+.input:focus {
+  border-bottom-color: #00a2cd;
+}
+
+input[type=range] {
+  width: var(--blur-width);
+  -webkit-appearance: none;
+}
+input[type=range]:focus {
+  outline: none;
+}
+input[type=range]:hover {
+  content: "blur";
+}
+input[type=range]::-webkit-slider-runnable-track {
+  height: 2px;
+  background: var(--theme);
+  border: none;
+  border-radius: 3px;
+  margin-bottom: -7px;
+}
+input[type=range]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  height: 15px;
+  width: 15px;
+  cursor: pointer;
+  border-radius: 50%;
+  background: var(--theme);
+  margin-top: -6px;
+}
+input[type=range]::-webkit-slider-thumb:hover {
+  background: #00a2cd;
+}
+
+input[type=checkbox] {
+  opacity: 0;
+  position: fixed;
+  z-index: -9;
+}
+
+label {
+  z-index: 55;
+}
+
+#grayscale {
+  font-size: 0.9em;
+  background: linear-gradient(90deg, #c6fc05 0%, #07c44f 50%, #00d4ff 100%);
+}
+#grayscale:hover {
+  background: linear-gradient(90deg, #a8de00 0%, #00a631 50%, #00b6e1 100%);
+}
+
+#gray:checked + label #grayscale {
+  background: linear-gradient(90deg, #c6c6c6 0%, #4f4f4f 50%, #d4d4d4 100%);
+}
+
+#gray:checked + label #grayscale:hover {
+  background: linear-gradient(90deg, #a8a8a8 0%, #313131 50%, #b6b6b6 100%);
+}
+
+.randomize {
+  background-color: var(--theme);
+  color: var(--white);
+}
+.randomize:hover {
+  background-color: #3c3c3c;
+}
+
+/* key frames */
+@keyframes rotate {
+  0% {
+    transform: rotate(0deg);
+  }
+  30% {
+    transform: rotate(360deg);
+  }
+  65% {
+    transform: rotate(450deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+@keyframes opacity {
+  0% {
+    opacity: 0.5;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+/*# sourceMappingURL=style.css.map */
