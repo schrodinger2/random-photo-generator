@@ -22,6 +22,10 @@
   .card {
     right: 10vw;
   }
+
+  .minicard {
+    right: 10vw;
+  }
 }
 @media (max-height: 800px) {
   .card {

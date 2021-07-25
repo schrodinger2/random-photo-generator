@@ -102,19 +102,19 @@ body {
 /* minicard */
 
 .minicard {
-  animation: opacity 2s reverse;
-  opacity: 0.5;
+  animation: reversed-opacity 1s ease;
+  opacity: 0.1;
   @extend %cards;
   height: auto;
 
   &:hover {
-    animation: opacity 2s ease;
+    animation: opacity 1s ease;
     opacity: 1;
   }
 }
 
 .style {
-  font-size: 1.5vw;
+  font-size: 2vh;
   color: rgb(0, 162, 205);
 
   #down:hover & {
@@ -265,10 +265,20 @@ label {
 }
 @keyframes opacity {
   0% {
-    opacity: 0.5;
+    opacity: 0.1;
   }
 
   100% {
     opacity: 1;
+  }
+}
+
+@keyframes reversed-opacity {
+  0% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0.1;
   }
 }
